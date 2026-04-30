@@ -3,7 +3,7 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
-IMAGE_FILE = 'face-1.jpg'
+IMAGE_FILE = 'face-1.png'
 
 import cv2
 
