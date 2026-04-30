@@ -50,7 +50,7 @@ if img is None:
 cv2.imshow("Image", img)
 
 # STEP 2: Create an ObjectDetector object.
-base_options = python.BaseOptions(model_asset_path='efficientdet_lite0.tflite')
+base_options = python.BaseOptions(model_asset_path='efficientdet_lite0_obj.tflite')
 options = vision.ObjectDetectorOptions(base_options=base_options,
                                        score_threshold=0.5)
 detector = vision.ObjectDetector.create_from_options(options)
