@@ -6,8 +6,8 @@ from mediapipe.tasks.python import vision
 
 DESIRED_HEIGHT = 480
 DESIRED_WIDTH = 480
-IMAGE_FILE = 'face-1.png'
-MODEL_FILE = 'efficientdet_lite0_imgcls.tflite'
+IMAGE_FILE = 'face-2.png'
+MODEL_FILE = 'efficientnet_lite0_imgcls.tflite'
 
 def resize_and_show(image):
   h, w = image.shape[:2]
