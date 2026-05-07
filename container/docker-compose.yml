@@ -1,0 +1,16 @@
+services:
+  pose-estimation:
+    build:
+      context: ..
+      dockerfile: container/Dockerfile
+    container_name: pose-estimation-app
+    volumes:
+      # Mount parent directory to access input images and output results
+      - ..:/app/data
+    working_dir: /app
+    # Override the default command to use the clean runner
+    command: ["python", "run_pose_clean.py"]
+    # Or use the bat file equivalent, but since we're in Linux container:
+    # command: ["python", "POSE_ESTIMATION.py"]
+    environment:
+      - PYTHONUNBUFFERED=1

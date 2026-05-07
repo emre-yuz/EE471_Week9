@@ -6,7 +6,7 @@ from mediapipe.tasks.python import vision
 
 DESIRED_HEIGHT = 480
 DESIRED_WIDTH = 480
-IMAGE_FILE = 'face-2.png'
+IMAGE_FILE = 'kedy.jpeg'
 MODEL_FILE = 'efficientnet_lite0_imgcls.tflite'
 
 def resize_and_show(image):
@@ -25,7 +25,6 @@ if image is None:
   raise FileNotFoundError(f"Could not read image file: {IMAGE_FILE}")
 
 resize_and_show(image)
-
 # Create an ImageClassifier object.
 base_options = python.BaseOptions(model_asset_path=MODEL_FILE)
 options = vision.ImageClassifierOptions(base_options=base_options, max_results=4)
@@ -43,3 +42,6 @@ if classification_result.classifications:
     print(f"{idx + 1}. {category.category_name} ({category.score:.2f})")
 else:
   print('No classification results.')
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
